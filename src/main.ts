@@ -1,6 +1,6 @@
-import { btnDameCarta, muestraPuntuacion, dameCarta, btnPlantarse, plantarse } from "./ui";
+import { btnDameCarta, dameCarta, btnPlantarse, plantarse, partida } from "./ui";
 
-document.addEventListener("DOMContentLoaded", muestraPuntuacion);
+document.addEventListener("DOMContentLoaded", partida.iniciar);
 if (btnDameCarta !== null && btnDameCarta !== undefined && btnDameCarta instanceof HTMLButtonElement) {
   btnDameCarta.addEventListener("click", dameCarta);
 }

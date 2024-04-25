@@ -126,3 +126,25 @@ export const finalizarJuego = (): void => {
   deshabilitarBotones();
   nuevaPartida();
 };
+
+export const partida = {
+  iniciar: (): void => {
+    resetearPuntuacion();
+    muestraPuntuacion();
+    if (btnDameCarta !== null && btnDameCarta !== undefined && btnDameCarta instanceof HTMLButtonElement) {
+      btnDameCarta.disabled = false;
+    }
+    if (btnPlantarse !== null && btnPlantarse !== undefined && btnPlantarse instanceof HTMLButtonElement) {
+      btnPlantarse.disabled = false;
+    }
+    if (btnNuevaPartida !== null && btnNuevaPartida !== undefined && btnNuevaPartida instanceof HTMLButtonElement) {
+      btnNuevaPartida.hidden = true;
+    }
+    if (btnVerResultado !== null && btnVerResultado !== undefined && btnVerResultado instanceof HTMLButtonElement) {
+      btnVerResultado.hidden = true;
+    }
+    if (imagenCarta !== null && imagenCarta !== undefined && imagenCarta instanceof HTMLImageElement) {
+      imagenCarta.src = "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg";
+    }
+  },
+};
