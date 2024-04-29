@@ -3,9 +3,23 @@ export const obtenerNumeroAleatorio = (): number => Math.floor(Math.random() * 1
 export const generarNumeroCarta = (numeroAleatorio: number): number =>
   numeroAleatorio > 7 ? numeroAleatorio + 2 : numeroAleatorio;
 
+export const obtenerPuntosCarta = (carta: number): number => (carta >= 10 ? 0.5 : carta);
+
+export const obtenerMensajePuntuacion = (puntuacion: number): string => {
+  if (puntuacion <= 4 || puntuacion < 5) {
+    return "Has sido muy conservador";
+  } else if (puntuacion === 5 || puntuacion < 6) {
+    return "Te ha entrado el canguelo eh?";
+  } else if (puntuacion === 6 || puntuacion <= 7) {
+    return "Casi casi...";
+  } else if (puntuacion === 7.5) {
+    return "<strong>¡Lo has clavado! ¡Enhorabuena! 🎉🎉</strong>";
+  }
+  return "";
+};
+
 export const obtenerUrlCarta = (carta: number): string => {
   const baseCartaUrl = "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/";
-
   switch (carta) {
     case 1:
       return baseCartaUrl + "1_as-copas.jpg";
@@ -31,5 +45,3 @@ export const obtenerUrlCarta = (carta: number): string => {
       return "";
   }
 };
-
-export const obtenerPuntosCarta = (carta: number): number => (carta >= 10 ? 0.5 : carta);
